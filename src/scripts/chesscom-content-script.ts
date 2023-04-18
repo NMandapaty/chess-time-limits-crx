@@ -1,4 +1,6 @@
-const disableAllPlayButtons = () => {
+import { getGameCount, setGameCount } from "../storage/storage";
+
+const disableAllPlayButtons = async () => {
   const quickPlayLinks = document.querySelectorAll(
     'a[href*="play/online/new"]'
   );
@@ -10,9 +12,12 @@ const disableAllPlayButtons = () => {
     'button[data-cy="new-game-index-play"]'
   );
   playButtons.forEach((button) => button.setAttribute("disabled", "true"));
+
+  const randomCount = Math.floor(Math.random() * 5);
+  await setGameCount(randomCount);
+
+  const count = await getGameCount();
+  console.log(`Game count = ${count}`);
 };
 
-alert("----------content script loaded----------")
 disableAllPlayButtons();
-
-export {};

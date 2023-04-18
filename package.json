@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "build-scripts": "tsc --outDir dist/scripts/ src/scripts/*",
     "preview": "vite preview"
   },
   "dependencies": {
