@@ -1,7 +1,13 @@
 {
   "name": "Chess Time Limits",
-  "version": "1.0",
+  "version": "0.1",
   "description": "Chrome extension that enforces time limits for chess websites. Don't play chess when you're tilted!",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.chess.com/*"],
+      "js": ["dist/scripts/chesscom-content-script.js"]
+    }
+  ],
   "manifest_version": 3
 }
