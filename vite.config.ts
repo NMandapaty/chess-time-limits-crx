@@ -7,11 +7,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "src/main.ts",
-        "chesscom-content-script": "src/scripts/chesscom-content-script.ts",
+        popupMain: "src/popupMain.ts",
+        "scripts/chesscom-content-script":
+          "src/scripts/chesscom-content-script.ts",
       },
       output: {
-        entryFileNames: `scripts/[name].js`,
-        assetFileNames: `assets/[name].js`,
+        entryFileNames: `[name].js`,
+        assetFileNames: `assets/[name].[ext]`,
       },
     },
     outDir: "dist",
